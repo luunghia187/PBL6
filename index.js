@@ -23,22 +23,8 @@ app.use(
 );
 
 //cac router
-// require("./src/routers/home.router")(app);
-// require("./src/routers/user.router")(app);
-// require("./src/routers/userPer.router")(app);
-// require("./src/routers/phim.router")(app);
-// require("./src/routers/thongBao.router")(app);
-// require("./src/routers/dienVien.router")(app);
-// require("./src/routers/matHang.router")(app);
-// require("./src/routers/lichChieu.router")(app);
-// require("./src/routers/doanhThu.router")(app);
-// require("./src/routers/giaoDich.router")(app);
-// require("./src/routers/maVach.router")(app);
-// require("./src/routers/chiTietGiaoDich.router")(app);
-// require("./src/routers/seat.router")(app);
-// require("./src/routers/seatNum.router")(app);
-// require("./src/routers/room.router")(app);
-// require("./src/routers/admin.router")(app);
+
+require("./src/routers/tag.router")(app);
 
 const server = http.createServer(app);
 
