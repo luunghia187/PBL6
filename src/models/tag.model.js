@@ -26,7 +26,7 @@ Tag.getById = function (id, result) {
 };
 
 Tag.add = function (data, result) {
-    db.query("INSERT tag (id_tag, tag_name) VALUES (?,?);", [data.id_tag, data.tag_name], function (err, p) {
+    db.query("INSERT tag (tag_name) VALUES (?);", [data.tag_name], function (err, p) {
         console.log(err, data)
         if (err) {
             result(null);

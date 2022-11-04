@@ -25,6 +25,7 @@ app.use(
 //cac router
 
 require("./src/routers/tag.router")(app);
+require("./src/routers/user.router")(app);
 
 const server = http.createServer(app);
 
