@@ -26,6 +26,8 @@ app.use(
 
 require("./src/routers/tag.router")(app);
 require("./src/routers/user.router")(app);
+require("./src/routers/review.router")(app);
+require("./src/routers/location.router")(app);
 
 const server = http.createServer(app);
 
