@@ -1,6 +1,6 @@
 var express = require("express");
 const cors = require("cors");
-// var cookies = require("cookie-parser");
+var cookies = require("cookie-parser");
 var app = express();
 const http = require('http');
 
@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(express.json());
-// app.use(cookies());
+app.use(cookies());
 
 app.use(
   cors({
@@ -28,6 +28,9 @@ require("./src/routers/tag.router")(app);
 require("./src/routers/user.router")(app);
 require("./src/routers/review.router")(app);
 require("./src/routers/location.router")(app);
+require("./src/routers/admin.router")(app);
+require("./src/routers/userPer.router")(app);
+require("./src/routers/user.router")(app);
 
 const server = http.createServer(app);
 

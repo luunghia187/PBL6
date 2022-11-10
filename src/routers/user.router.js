@@ -1,7 +1,6 @@
 module.exports = function (router) {
     var userController = require("../controller/user.controller");
     // var middlewareController = require("../controller/middleware.controller");
-    //cua nghia
     router.get("/user/list", userController.get_list);
 
     router.get("/user/detail/:id", userController.detail);
