@@ -16,7 +16,8 @@ User.Register = (data, result) => {
         [data.username, data.password, data.email, data.phone],
         function (err, user) {
           if (err) {
-            result(403, "Registration failed");
+            console.log(err);
+            result(403, "Registration failed");          
           } else {
             result(200, "Registration successfuly");
           }
