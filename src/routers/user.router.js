@@ -1,6 +1,8 @@
+
 module.exports = function (router) {
   var userController = require("../controller/user.controller");
-  //cua nghia
+  const fileUploader = require('../controller/uploader.controller');
+
   router.get("/user/list", userController.get_list);
 
   router.get("/user/detail/:id", userController.detail);
@@ -8,6 +10,8 @@ module.exports = function (router) {
   router.post("/user/add", userController.add_user);
 
   router.delete("/user/delete/:id", userController.remove_user);
+
+  router.post("/user/upload/:id", fileUploader.single("file"), userController.upload_user);
 
   router.put("/user/update", userController.update_user);
   //Register user

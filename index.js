@@ -3,6 +3,8 @@ const cors = require("cors");
 var cookies = require("cookie-parser");
 var app = express();
 const http = require('http');
+require('dotenv').config()
+
 
 const normalizePort = require('normalize-port');
 const port = normalizePort(process.env.PORT || '5000');

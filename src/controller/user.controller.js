@@ -4,6 +4,8 @@ const bcrypt = require("bcrypt");
 var user = require("../models/user.model");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
+const db = require('../common/connect');
+
 
 exports.Register = async (req, res) => {
   try {
@@ -127,4 +129,23 @@ exports.update_user = function (req, res) {
   User.update(data, function (response) {
     res.send({ result: response });
   });
+};
+
+
+exports.upload_user = function (req, res) {
+  var id = req.params.id;
+  if (!req.file) {
+    next(new Error('No file uploaded!'));
+    return;
+  }
+  db.query("update user set avatar=? where Id_User = ?", [req.file.path, id], function (err, u) {
+    if (err) 
+        console.log(err);
+    //     result(err);
+    // } else {
+    //     result(u);
+    // }
+})
+ 
+  res.json({ secure_url: req.file.path });
 };
