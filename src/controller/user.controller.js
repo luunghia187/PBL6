@@ -10,7 +10,7 @@ exports.Register = async (req, res) => {
     if (req.body.password != req.body.confpassword) {
       return res
         .status(400)
-        .json({ msg: "Password and ConfirmPassWord not match" });
+        .json({ msg: "Password and confirm password not match!" });
     }
     const salt = await bcrypt.genSalt(10);
     const hashed = await bcrypt.hash(req.body.password, salt);
@@ -83,9 +83,7 @@ exports.UpdateUser = async (req, res) => {
   var data = req.body;
   User.UpdateUser(data.id, data.username, data.phone, (sta, user) => {
     user.User_Password = "";
-    const token = req.headers.token;
-    const accessToken = token.split(" ")[1];
-    res.status(sta).json({ ...user, accessToken });
+    res.status(sta).json({ ...user});
   });
 };
 exports.UpdatePassWord = async (req, res) => {

@@ -7,16 +7,13 @@ var mysql = require('mysql');
 //     database: 'pbl6'
 // });
 
-var connection = mysql.createConnection({
+var connection = mysql.createPool({
     host: 'remotemysql.com',
     user: 'FpOP5swXpw',
     password: 'vaYhu1dWAL',
     database: 'FpOP5swXpw'
 });
 
-connection.connect(function (err, connection) {
-    if(err) console.log("ket noi that bai");
-    else console.log("ket noi");
-});
+connection.query('select 1 + 1', (err, rows) => { /* */ });
 
 module.exports = connection;

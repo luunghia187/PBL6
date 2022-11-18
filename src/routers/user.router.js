@@ -1,6 +1,5 @@
 module.exports = function (router) {
   var userController = require("../controller/user.controller");
-  var middlewareController = require("../controller/middleware.controller");
   //cua nghia
   router.get("/user/list", userController.get_list);
 
@@ -18,20 +17,9 @@ module.exports = function (router) {
   //RefreshToken
   router.post("/user/refresh", userController.RefreshToken);
   //Logout
-  router.post(
-    "/user/logout",
-    middlewareController.verifyToken,
-    userController.LogOut
-  );
-  router.put(
-    "/user/update1",
-    middlewareController.verifyToken,
-    userController.UpdateUser
-  );
+  router.post( "/user/logout",userController.LogOut);
+  
+  router.put("/user/update1",userController.UpdateUser);
 
-  router.put(
-    "/user/updatepassword",
-    middlewareController.verifyToken,
-    userController.UpdatePassWord
-  );
+  router.put("/user/updatepassword",userController.UpdatePassWord);
 };
