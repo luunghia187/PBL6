@@ -56,7 +56,7 @@ Location.remove = function (id, result) {
 }
 
 Location.update = function (u, result) {
-    db.query("update location set name=?, address=?, latitude=?, longitude=?, id_tag=?, describes=?, stars=?, slug=?, center_img=?, sub_img=? where id_location = ?", [u.name, u.address, u.latitude, u.longitude, u.id_tag, u.describes, u.stars, u.slug, u.center_img, u.sub_img, u.id_location], function (err, u) {
+    db.query("update location set stars=? where id_location = ?", [u.stars, u.id_location], function (err, u) {
         console.log(err)
         if (err) {
             console.log(err);

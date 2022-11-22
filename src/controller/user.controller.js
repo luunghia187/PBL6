@@ -132,7 +132,7 @@ exports.update_user = function (req, res) {
 };
 
 
-exports.upload_user = function (req, res) {
+exports.upload_user = function (req, res,next) {
   var id = req.params.id;
   if (!req.file) {
     next(new Error('No file uploaded!'));
