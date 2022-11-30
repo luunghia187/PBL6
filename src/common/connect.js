@@ -8,6 +8,10 @@ var mysql = require('mysql');
 // });
 
 var connection = mysql.createPool({
+    connectionLimit : 1000,
+    connectTimeout  : 60 * 60 * 1000,
+    acquireTimeout  : 60 * 60 * 1000,
+    timeout         : 60 * 60 * 1000,
     host: 'remotemysql.com',
     user: 'FpOP5swXpw',
     password: 'vaYhu1dWAL',

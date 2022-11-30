@@ -20,7 +20,7 @@ app.use(cookies());
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000","https://danatravel.vercel.app", "http://54.255.118.26:3000"] 
   })
 );
 
