@@ -12,10 +12,10 @@ var connection = mysql.createPool({
     connectTimeout  : 60 * 60 * 1000,
     acquireTimeout  : 60 * 60 * 1000,
     timeout         : 60 * 60 * 1000,
-    host: 'remotemysql.com',
-    user: 'FpOP5swXpw',
-    password: 'vaYhu1dWAL',
-    database: 'FpOP5swXpw'
+    host: 'sql6.freesqldatabase.com',
+    user: 'sql6586560',
+    password: 'dLA3wPd67J',
+    database: 'sql6586560'
 });
 
 connection.query('select 1 + 1', (err, rows) => { /* */ });
