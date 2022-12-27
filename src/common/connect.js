@@ -13,9 +13,9 @@ var connection = mysql.createPool({
     acquireTimeout  : 60 * 60 * 1000,
     timeout         : 60 * 60 * 1000,
     host: 'sql6.freesqldatabase.com',
-    user: 'sql6586560',
-    password: 'dLA3wPd67J',
-    database: 'sql6586560'
+    user: 'sql6586699',
+    password: 'es77Z71CzM',
+    database: 'sql6586699'
 });
 
 connection.query('select 1 + 1', (err, rows) => { /* */ });
